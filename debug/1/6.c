@@ -20,7 +20,7 @@ double bisection(int p, int q, double (*func)(int, int, double)) {
     {
         if(f(p,q,m)*f(p,q,b)<0)
         {
-           ba=m;
+           a=m;
         }
         else
         {
