@@ -17,12 +17,13 @@ double bisection(int p, int q, double (*func)(int, int, double)) {
     double m;
     while(1){
         m = (a + b) / 2;
-        if(f(p,q,m) < EPSILON){
+        if(fabs(f(p,q,m)) < EPSILON){
             return m;
-        }else if(f(p,q,a) * f(p,q,m) < 0){
-            a = m;
-        }else{
+        }
+		else if(f(p,q,a) * f(p,q,m) < 0){
             b = m;
+        }else{
+            a = m;
         }
     }
 }
