@@ -11,12 +11,12 @@ int main() {
 	int i, j, k;
 	
 	//乘积矩阵初始化
-	for (i = 0; i <= 10; i++){
-		for (k = 0; k <= 10; k++){
-			matrix_c[i][k] = 0;
-		}
+	//for (i = 0; i <= 10; i++){
+	//	for (k = 0; k <= 10; k++){
+	//		matrix_c[i][k] = 0;
+	//	}
 		
-	}
+	//}
 	
 	//m、n输入
 	scanf("%d %d", &m, &n);
@@ -50,9 +50,9 @@ int main() {
 				if (k < m - 1 ) {
 					printf(" ");
 				}
-				if (i == m - 1) {
-					continue;
-				}
+				//if (i == m - 1) {
+				//	continue;
+				//}
 				if (k == m - 1) {
 					printf("\n");
 				}
