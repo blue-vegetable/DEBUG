@@ -13,7 +13,7 @@ int main() {
 }
 
 double bisection(int p, int q, double (*func)(int, int, double)) {
-     double a;
+    double a;
 	double b;
 	double m;
 	a = -20.0;
