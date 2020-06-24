@@ -23,9 +23,9 @@ int main(void) {
     //process
     for (int i = 0; i < m; i++) {
         for (int j = 0; j < m; j++) {
-            mtxC[i][j] = 0;
+          //  mtxC[i][j] = 0;
             for (int k = 0; k < n; k++) {
-                mtxC[i][j] = mtxA[i][k] * mtxB[k][j];
+                mtxC[i][j] += mtxA[i][k] * mtxB[k][j];
             }
         }
     }
