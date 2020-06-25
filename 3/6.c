@@ -13,58 +13,64 @@ int main() {
         }
     }
     
-    int start = 0, column = n, row = m;
-    while(start < column && start < row) {
-        if (n == 1) {
-            for (int i = 0; i < m; i++) {
-                if (i == m - 1){
-                    printf("%d", matrix[i][0]);
-                } else
-                printf("%d ", matrix[i][0]);
-            }
-        } else  if (m == 1) {
-            for (int j = 0; j < n; j++) {
-                if (j == n - 1){
-                    printf("%d", matrix[0][j]);
-                } else
-                printf("%d ", matrix[0][j]);
-            }
-        } else {
-    		for (int j = start; j < column; j++) {
-                if (start+1 == row && column-1 == j) {
-                    printf("%d", matrix[start][j]);
-                    break;
-                } else
-        		printf("%d ", matrix[start][j]);
-    		}
-    		for (int i = start + 1; i < row; i++) {
-                if (i+1 == row && column-2 == start) {
-                    printf("%d", matrix[i][column-1]);
-                    break;
-                } else
-       		 	printf("%d ", matrix[i][column-1]);
-    		}		
-    		for (int j = column-2; j >= start; j--) {
-                if (row-2 == start && j == start) {
-                 printf("%d", matrix[row-1][j]);
-                    break;
-                } else
-       		 	printf("%d ", matrix[row-1][j]);
-   			}
-    		for (int i = row-2; i > start; i--) {
-                if (i == start + 1 && start+1 == column-1) {
-                  printf("%d", matrix[i][start]); 
-                    break;
-                } else
-        		printf("%d ", matrix[i][start]);
-   			}
-        }
-    	start++;
-    	column--;
-    	row--;
-    }
+    int index = 0;
+    int up = 0,down = m - 1,left = 0,right = n - 1;
+    int i = 0,j = 0;
+    if ( index == 0){
+	i = up;
+	printf("%d",matrix[i][j]);
+	for (j = 1; j <= right; j++){ 
+                    printf(" %d",matrix[i][j]);
+				}
+			up++;
+			index = 1;
+			}
+    while(up <= down && left <= right)
+{
+		 if (index == 1)//向下走
+{
+		j = right;
+		for (i = up; i <= down; i++)
+{
+		printf(" %d",matrix[i][j]);
+}
+				right--;
+				index = 2;
+			}
+			else if (index == 2)//向右走
+			{
+				i = down;
+				for (j = right; j >= left; j--)
+				{
+					 printf(" %d",matrix[i][j]);
+				}
+				down--;
+				index = 3;
+			}
+			else if (index == 3)//向上走
+			{
+				j = left;
+				for (i = down; i >= up; i--)
+				{
+					printf(" %d",matrix[i][j]);
+				}
+				left++;
+				index = 0;
+			}
+        else if (index == 0)//向右走
+			{
+				i = up;
+                
+				for (j = left; j <= right; j++)
+				{ 
+                    printf(" %d",matrix[i][j]);
+				}
+				up++;
+				index = 1;
+			}
+		}
+             
 
 
-
-    return 0;
+   return 0;
 }
