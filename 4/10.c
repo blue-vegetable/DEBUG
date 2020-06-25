@@ -5,24 +5,18 @@ int main() {
     int m;
     int numbers[10];
     int i;
-    int max;
-    int k;
-    int j;
-    int o;
-    // 读入给定的数字
+    int temp;
     for (i = 0; i < n; i++) {
         scanf("%d", &numbers[i]);
     }
-    for (j = 0; j < n; j++) {
-        for(k = j; k < n - 1; k++){
-            if(numbers[k] < numbers[k+1]){
-                m = k + 1;
+    for (i = 0; i < n; i++) {
+       for(m = 0; m < 9-i; m++){
+            if(numbers[m] < numbers[m+1]){
+                temp=numbers[m];
+                numbers[m]=numbers[m+1];
+                numbers[m+1]=temp;
             }
-           
         }
-        o = numbers[j];
-        numbers[j] = numbers[m];
-        numbers[m] = o;
     }
     for (int q = 0; q < n; q++) {
         if (q == 9) {
