@@ -2,7 +2,6 @@
 
 int main() {
     int n = 10;
-    int m;
     int numbers[10];
     int i,j;
     int tmpt;
@@ -13,7 +12,7 @@ int main() {
     }
 
     for (i = 0; i < n; i++) {
-        for (j = i; j < n; j++) {
+        for (j = i; j <9 - n; j++) {
             if (numbers[i] < numbers[j]){
                 tmpt = numbers[i];
                 numbers[i] = numbers[j];
