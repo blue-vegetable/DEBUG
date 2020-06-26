@@ -7,12 +7,12 @@ int main() {
     }
     
     for (int i = 0; i < 10; i++) {
-        for (int j = 0; j < 10 - i - 1; i++) {
-            if (strcmp(names[j], names[j+ 1]) > 0) {
+        for (int j = i+1; j < 10 ; j++) {
+            if (strcmp(names[j], names[i]) < 0) {
                 char temp[21];
                 strcpy(temp, names[j]);
-                strcpy(names[j], names[j + 1]);
-                strcpy(names[j + 1],temp);
+                strcpy(names[j], names[i]);
+                strcpy(names[i],temp);
             }
         }
     }
