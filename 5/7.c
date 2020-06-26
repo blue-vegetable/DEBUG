@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
-void swap (char **b, char **c) {
-    char* temp=(char *)malloc(31);
+void swap (char *b, char *c) {
+    char temp;
     temp = *b;
     *b= *c;
     *c = temp;
