@@ -6,7 +6,7 @@ int main() {
     scanf("%d\n", &n);
     char string[n][101];
     for (i = 0; i < n; i++){
-        for (j = 0; j < 100; j++){
+        for (j = 0; j < 101; j++){
             scanf("%c", &string[i][j]);
             if (string[i][j] == '\n'){
                 string[i][j] = '\0';
