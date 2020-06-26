@@ -3,7 +3,7 @@
 int main() {
     int n;
     scanf("%d\n", &n);
-    int i,j,k;
+    int i,j;
     char a[100][100]={'0'};
     char temp[100] = {'0'};
 
@@ -13,21 +13,22 @@ int main() {
                 break;
             }
             if(a[i][j] == '\n' ){
+ 		a[i][j]='\0';
                 break;
             }
         }
     }
     
-    for(i = 0,k = 0; i < n - 1; i++){
-        if (strlen(a[k]) > strlen(a[i+1])){
-            strcpy(temp, a[k]);
-        }
-        else{
-            k = i+1;
-            strcpy(temp, a[k]);
+    for(i = 0; i < n - 1; i++){
+        for(j = 0;j<n-1-i;j++){
+		if(strlen(a[j]) < strlen(a[j+1])) {
+                   strcpy(temp, a[j]);
+                   strcpy(a[j], a[j + 1]);
+                   strcpy(a[j + 1], temp);
+            }
         }
     }
-    printf("%s",temp);
+    printf("%s",a[0]);
 
     return 0;
 }
