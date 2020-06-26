@@ -3,7 +3,7 @@
 int main() {
     int n;
     int i, j;
-    scanf("%d", &n);
+    scanf("%d\n", &n);
     char names[n][101];
     char temp[101];
     
@@ -11,6 +11,7 @@ int main() {
             for (j = 0; j < 101; j++) {
                 scanf("%c", &names[i][j]);
                 if (names[i][j] == '\n') {
+                    names[i][j] = '\0';
                     break;
                 }            
             }
