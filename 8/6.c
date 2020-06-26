@@ -2,7 +2,7 @@
 #include <string.h>
 int main() {
     int n;
-    int i, j;
+    int i=0, j=0;
     scanf("%d", &n);
     char names[n][101];
     char temp[101];
@@ -28,6 +28,6 @@ int main() {
         }
     }
     
-    printf("%s\n", names[number]);   
+    printf("%s", names[number]);   
     return 0;
 }
