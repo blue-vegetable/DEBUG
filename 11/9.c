@@ -1,50 +1,37 @@
 #include <stdio.h>
-int main() 
+int main()
 {
     char in[500];
     char out[33];
-    char oneC;
-    int oneInt;
-    int k;
     int arr[32];
     int bits[32];
     int i;
-    int j;
+    int j=0;
     
     scanf("%s", in);
-    k = strlen(in);
+   // k = strlen(in);
     
     // 1
     for (i = 0; i < 32; i++)
     {
         arr[i] = 0;
     }
-    
-    // 2
-    for (i = 1; i <= k; i++)
-    {
-        oneC = in[i - 1];
-        oneInt = oneC;
-        arr[i % 32] = oneInt;
+    while (in[j] != '\0') {
+        if (in[j] == '\n') {
+            break;
+        }
+        arr[(j + 1) % 32] = arr[(j + 1) % 32] + (int)(in[j]);
+        j++;
     }
-    
-    // 3
-    for (j = 0; j < 32; j++)
-    {
-        oneInt = (arr[31 - j] ^ (arr[j] << 1));
-        bits[j] = oneInt;
+
+    for (int i = 0; i < 32; i++) {
+        bits[i] = (arr[31 - i]) ^ (arr[i] << 1);
+        int b = (bits[i] % 85) + 34;
+        out[i] = (char)b;
     }
-    
-    // 4
-    for (j = 0; j < 32; j++)
-    {
-        oneInt = (bits[j] % 85 + 34);
-        oneC = oneInt;
-        out[j] = oneC;
+
+    for (int i = 0; i < 32; i++) {
+        printf("%c", out[i]);
     }
-    out[32] = '\0';
-    
-    printf("%s", out);
-        
     return 0;
 }
