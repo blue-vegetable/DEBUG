@@ -47,7 +47,7 @@ void count_off(Node *head, int n, int k, int m) {
     Node *out;
     pre = head;
     count = 0;
-    if(k = 1){
+    if(k == 1){
         for(i = 1; i < n; i++){
             pre = pre->next;
         }
@@ -70,7 +70,7 @@ void count_off(Node *head, int n, int k, int m) {
         temp = temp->next;
         pre->next = temp;
         free(out);
-        if(count != n){
+        if(count != n-1){
             printf(" ");
         }
         count++;
