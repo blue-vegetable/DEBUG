@@ -4,25 +4,23 @@
 
 int main() {
     char arr[32];
-    char str[32];
+    char str[500];
     int bits[32];
     char result[32];
     
-    scanf("%s", &arr[32]);
+    scanf("%s", str);
     char input;
     int j = 0;
     
     for(int i = 0; i < 32; i++){
-        arr[i] = '0';
+        arr[i] = 0;
     }
     
-    while (scanf("%c", &input) != EOF) {
-        if (input == '\n'){
-            break;
-        }else if(j >= 32){
+    while (str[j]!='\0') {
+        if (str[j] == '\n'){
             break;
         }
-        arr[j % 32] = arr[j % 32] + (int)(input);
+        arr[(j+1) % 32] = arr[(j+1) % 32] + (int)(str[j]);
         j++;
     }
    
