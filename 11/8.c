@@ -16,18 +16,24 @@ void f(char string[])
 {
     int arr[32], bits[32];
     char result[33];
-    int i, j;
-    unsigned long k;
+    int i, j=0;
     
     for (i = 0; i < 32; i++)
         arr[i] = 0;
-    k = strlen(string);
-    for (i = 1; i <= k; i++)
-        arr[i % 32] += (int)string[i - 1];
-    for (j = 0; j < 32; j++){
-        bits[j] = arr[31 - j] ^ (arr[j] << 1);
-        result[j + 1] = (char)(bits[j] % 85 + 34);
-    }
+    while (string[j] != '\0') {
+           if (string[j] == '\n') {
+               break;
+           }
+     arr[(j + 1) % 32] = arr[(j + 1) % 32] + (int)(string[j]);
+     j++;
+       }
+
+    for (int i = 0; i < 32; i++) {
+           bits[i] = (arr[31 - i]) ^ (arr[i] << 1);
+           int b = (bits[i] % 85) + 34;
+           result[i] = (char)b;
+       }    
+
     for (j = 0; j < 33; j++)
         printf("%c", result[j]);
 }
