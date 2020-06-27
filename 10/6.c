@@ -5,9 +5,9 @@ int a,b,c;
         
      for(b=2;b<=c;b++) { 
      for(a=2;a<b;a++){
-     if(b%a==0){printf("");break;}
+     if(b%a==0){break;}
      }
-        if (a>=b){printf("%d\n"),b;}
+        if (a>=b){printf("%d\n",b);}
      }
     return 0;
 }
