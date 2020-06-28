@@ -4,6 +4,9 @@ int main() {
     int a[3]={0,0,0};
     for(int i=0;i<3;i++){
        scanf("%c",&n);
+        if(n == '\n') {
+            break;
+        }
         if(n == 'r'){
             a[0]=1;
         }
