@@ -5,7 +5,8 @@
 double bisection(int p, int q, double (*func)(int, int, double));
 double f(int p, int q, double x);
 
-int main() {
+int main() 
+{
     int p;
     int q;
     scanf("%d%d", &p, &q);
@@ -21,17 +22,18 @@ double bisection(int p, int q, double (*func)(int, int, double))
     a = 20;
     b = -20;
     c = (a + b) / 2;
-  
+    
     while(fabs(f(p, q, c)) >= EPSILON) {
         if((f(p, q, a) * f(p, q, c)) < 0) {
             b = c;
-            c = (a + b) / 2;    //ÕâÀïÖ®Ç°ÊÇ¶ººÅÓï¾ä
+            c = (a + b) / 2;    
         }
         if((f(p, q, b) * f(p, q, c)) < 0) {
             a = c;
             c = (a + b) / 2;
         }
     }
+    
     return c;
 }
 
@@ -39,3 +41,4 @@ double f(int p, int q, double x)
 {
     return p * x + q;
 }
+

@@ -18,6 +18,7 @@ double bisection(int p, int q, double (*func)(int, int, double))
 {
     double a = 20.0, b = -20.0;
     double m;
+    
     while(1) {
         m = (a + b) / 2;
         if(fabs(f(p, q, m)) < EPSILON) {
@@ -28,9 +29,11 @@ double bisection(int p, int q, double (*func)(int, int, double))
             a = m;
         }
     }
+    
 }
 
 double f(int p, int q, double x) 
 {
     return p * x + q;
 }
+
