@@ -34,12 +34,19 @@ Node *circle_create(int n) {
 }
 
 void count_off(Node *head, int n, int k, int m) {
-     Node *temp, *pre;
+    Node *temp, *pre;
     pre = head;
     temp = head;
     
-    for (int i = 1 ; i < k - 1; i++) {
-        pre = pre -> next;
+    int i;
+    if (k == 1) {
+        for (i = 1; i < n; i++) {
+            pre = pre->next;
+        }
+    } else {
+        for (i = 1; i < k - 1; i++) {
+            pre = pre->next;
+        }
     }
     
     int num = 0;
