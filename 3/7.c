@@ -57,7 +57,7 @@ int main()
             }
         }
         // ouput a col, towards up
-        if (endX - 1 > startX && startY <= endY) {
+        if (endY > startY && startX <= endX) {
             for (i = endX - 1; i >= startX + 1; i--) {
                 printf("%d", matrix[i][startX]);
                 if (i > startX + 1 || startY < endY - 1) {
