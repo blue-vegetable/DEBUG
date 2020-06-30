@@ -12,15 +12,15 @@ void count_off(Node *head, int n, int k, int m);
 int main()
 {
     int n, k, m;
-    
+
     scanf("%d%d%d", &n, &k, &m);
     Node *head = circle_create(n);
     count_off(head, n, k, m);
-    
+
     return 0;
 }
 
-Node *circle_create(int n) 
+Node *circle_create(int n)
 {
     Node *temp, *new_node, *head;
     int i;
@@ -41,13 +41,13 @@ Node *circle_create(int n)
     return head;
 }
 
-void count_off(Node *head, int n, int k, int m) 
+void count_off(Node *head, int n, int k, int m)
 {
     int x, y;
     Node *find;
     Node *temp= head;
     Node *pre = temp;
-    
+
     for(y = 0; y < n; y++) {
         if(y == 0) {
             for(x = 0; x < k-1; x++) {
@@ -65,7 +65,7 @@ void count_off(Node *head, int n, int k, int m)
         pre->next = temp->next;
         find = temp;
         temp = temp->next;
-        free(find);
+        //free(find);
 
         if(y != n - 1) {
             printf(" ");
@@ -74,4 +74,3 @@ void count_off(Node *head, int n, int k, int m)
 
     return;
 }
-
