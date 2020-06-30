@@ -9,28 +9,33 @@ typedef struct node {
 Node *circle_create(int n);
 void count_off(Node *head, int n, int k, int m);
 
-int main() 
+int main()
 {
     int n, k, m;
-    
-    scanf("%d%d%d", &n, &k, &m);
+    scanf("%d %d %d", &n, &k, &m);
+
+    if(k == 1&&m==1){
+        for(int i = 1; i<=n;i++){
+            printf("%d ", i);
+        }
+        return 0;
+    }
     Node *head = circle_create(n);
     count_off(head, n, k, m);
-    
     return 0;
 }
 
-Node *circle_create(int n) 
+Node *circle_create(int n)
 {
     Node *temp, *new_node, *head;
     int i;
 
-    temp = (Node *) malloc(sizeof(Node));
+    temp = (Node *)malloc(sizeof(Node));
     head = temp;
     head->data = 1;
 
-    for(i = 2; i <= n; i++) {
-        new_node = (Node *) malloc(sizeof(Node));
+    for (i = 2; i <= n; i++) {
+        new_node = (Node *)malloc(sizeof(Node));
         new_node->data = i;
         temp->next = new_node;
         temp = new_node;
@@ -41,9 +46,9 @@ Node *circle_create(int n)
     return head;
 }
 
-void count_off(Node *head, int n, int k, int m) 
+void count_off(Node *head, int n, int k, int m)
 {
-    Node *temp, *prev, *pre;
+    Node *temp, *prev;
     temp = head;
     prev = temp;
 
@@ -51,7 +56,8 @@ void count_off(Node *head, int n, int k, int m)
         prev = temp;
         temp = temp->next;
     }
-    if (temp == NULL) return;
+    if (temp == NULL)
+        return;
 
     int count = 0;
 
@@ -60,17 +66,12 @@ void count_off(Node *head, int n, int k, int m)
             prev = temp;
             temp = temp->next;
         }
-        printf("%d", temp->data);
-        if(temp->next != NULL) {
-            printf(" ");
-        }
+        printf("%d ", temp->data);
         count++;
         prev->next = temp->next;
-        pre  = temp;
-        temp = temp->next;
-        free(pre);
+        free(temp);
+        temp = prev->next;
     }
 
     return;
 }
-
