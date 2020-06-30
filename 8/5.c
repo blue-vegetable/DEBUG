@@ -1,18 +1,18 @@
 #include <stdio.h>
 #include <string.h>
 
-int main() 
+int main()
 {
     int n;
     scanf("%d", &n);
     getchar();
-    char name[n][100];
+    char name[n][110];
 
     for (int i = 0; i < n; i++) {
         gets(name[i]);
     }
 
-    char name_max[100];
+    char name_max[110];
     strcpy(name_max, name[0]);
 
     for(int i = 1; i < n; i++) {
@@ -24,4 +24,3 @@ int main()
     printf("%s", name_max);
     return 0;
 }
-
