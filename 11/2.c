@@ -9,7 +9,7 @@ int main()
     int i, j;
     int counter = 0;
 
-    while (scanf("%c", &input) && input != '\n') {
+    while (scanf("%c", &input) != EOF) {
         counter++;
         arr[counter % 32] += input;
     }
@@ -23,4 +23,3 @@ int main()
     
     return 0;
 }
-
