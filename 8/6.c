@@ -5,13 +5,13 @@ int main()
 {
     int n;
     int i = 0, j = 0;
-    scanf("%d\n", &n);
-    char names[n][101];
-    char temp[101];
+    scanf("%d", &n);
+    char names[n][110];
+    char temp[110];
 
     while (scanf("%c", &names[i][j]) != EOF) {
         for (i = 0; i < n; i++) {
-            for (j = 0; j < 101; j++) {
+            for (j = 0; j < 110; j++) {
                 scanf("%c", &names[i][j]);
                 if (names[i][j] == '\n') {
                     names[i][j] = '\0';
