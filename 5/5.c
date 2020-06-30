@@ -3,7 +3,7 @@
 #define Num 10
 #define NameMax 21
 
-void swap (char **str1, char **str2);
+void swap (char str1[][21], char str2[][21]);
 
 int main() 
 {
@@ -30,10 +30,10 @@ int main()
     return 0;
 }
 
-void swap(char **str1,char **str2) 
+void swap(char (*str1)[21],char (*str2)[21]) 
 {
-    char *temp;
-    temp = *str1;
-    *str1 = *str2;
-    *str2 = temp;
+    char temp[21];
+    strcpy(temp,str1);
+    strcpy(str1,str2);
+    strcpy(str2,temp);
 }
