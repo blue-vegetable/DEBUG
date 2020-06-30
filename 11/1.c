@@ -18,11 +18,11 @@ int main()
         bits[j] = arr[31 - j] ^ (arr[j] << 1);
     }
     for (j = 0; j <= 31; j++) {
-        result[j] = (bits[j] % 85) + 34;
+        int x = (bits[j] % 85) + 34);
+        result[j] = (char)x;
     }
     
-    result[33] = '\0';
+    result[32] = '\0';
     puts(result);
     return 0;
 }
-
