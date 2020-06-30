@@ -8,9 +8,9 @@ int main()
     char n;
     int i = 1;
     
-    while(scanf("%c", &n) && n != '\n') {
+    while(scanf("%c", &n) != EOF) {
         int c = (int)n;
-        arr[i % 32]+= c;
+        arr[i % 32] += c;
         i++;
     }
     
@@ -29,4 +29,3 @@ int main()
 
     return 0;
 }
-
