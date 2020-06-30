@@ -13,7 +13,7 @@ int main()
     }
     for (i = 0; i < n; i++) {
         for (j = 0; j < n - 1; j++) {
-            if (numbers[i] < numbers[j]) {
+            if (numbers[i] > numbers[j]) {
                 tmpt = numbers[i];
                 numbers[i] = numbers[j];
                 numbers[j] =   tmpt;
