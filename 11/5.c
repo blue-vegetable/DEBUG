@@ -13,7 +13,7 @@ int main()
     for(int i = 0; i < 32; i++) {
         arr[i] = 0;
     }
-    while (scanf("%c", &input) && input != '\n') {
+    while (scanf("%c", &input) != EOF) {
         if(j >= 500) {
             break;
         }
@@ -34,4 +34,3 @@ int main()
 
     return 0;
 }
-
