@@ -52,6 +52,7 @@ void count_off(Node *head, int n, int k, int m)
         for (i = 1; i < n; i++) {
             pre = pre->next;
         }
+        pre = head;
     } else {
         for (i = 1; i < k - 1; i++) {
             pre = pre->next;
@@ -68,7 +69,7 @@ void count_off(Node *head, int n, int k, int m)
                 printf("%d ", pre -> data);
             }
             pre = pre -> next;
-            free(pre);
+          //  free(pre);
             num++;
         } else {
             for (int i = 1 ; i < m; i++) {
@@ -81,7 +82,7 @@ void count_off(Node *head, int n, int k, int m)
                 printf("%d ", temp -> data);
             }
             pre -> next = temp -> next;
-            free(temp);
+            //free(temp);
             num++;
         }
     }
