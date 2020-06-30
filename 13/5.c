@@ -43,19 +43,21 @@ Node *circle_create(int n)
 
 void count_off(Node *head, int n, int k, int m) 
 {
-    Node *temp, *pre, *pre2;
-    int i;
+    Node *temp, *pre, *free1;
+    int i = 1;
     int times;
     times = 1;
     temp = head;
     pre = head;
     
-    if(k == 1) {
-        for(i = 1; i < n; i++) {
+    if (k == 1) {
+        for (i = 1; i < n; i++) {
             pre = pre->next;
         }
+            pre =head;
+     
     } else {
-        for(i = 1; i < k - 1; i++) {
+        for (i = 1; i < k - 1; i++) {
             pre = pre->next;
         }
     }
@@ -64,26 +66,31 @@ void count_off(Node *head, int n, int k, int m)
     i = 1;
     
     while(times <= n) {
-        if(i == m) {
-            printf("%d", temp->data);
-            pre2 = temp;
+        if (m == 1) {
+            if (times == n ) {
+                printf("%d", pre -> data);
+            } else {
+                printf("%d ", pre -> data);
+            }
+            pre = pre -> next;
+           // free(pre);
             times++;
-            pre->next = pre->next->next;
-            temp = pre;
-            free(pre2);
-            i = 0;
-            if(times != n + 1) {
+        } else if(i == m) {
+            printf("%d", temp->data);
+            times++;
+            pre->next = temp->next;
+            free1  =temp;
+            temp = temp->next;
+            free(free1);
+            if(times != 1 + n) {
                 printf(" ");
             }
+            i=1;
         }
-        
         pre = temp;
         temp = temp->next;
         i++;
     }
-    
+
     return;
 }
-
-
-
