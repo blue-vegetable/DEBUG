@@ -15,7 +15,7 @@ int main()
 void f(char string[])
 {
     int arr[32], bits[32];
-    char result[33];
+    char result[33] = {'\0'};
     int i, j = 0;
 
     for (i = 0; i < 32; i++)
@@ -34,6 +34,6 @@ void f(char string[])
         result[i] = (char)b;
     }
 
-    for (j = 0; j < 33; j++)
+    for (j = 0; j < 32; j++)
         printf("%c", result[j]);
 }
