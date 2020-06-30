@@ -4,7 +4,7 @@ int main()
 {
     int n, i;
     int sum = 0;
-    int arr[50];
+    int arr[60];
     scanf("%d", &n);
     arr[0] = 0;
     arr[1] = 0;
@@ -18,4 +18,3 @@ int main()
     printf("%d", arr[n]);
     return 0;
 }
-
