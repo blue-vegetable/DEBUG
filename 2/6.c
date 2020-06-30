@@ -25,10 +25,11 @@ int main()
     }
     for(mIndex = 0; mIndex < m; mIndex ++) {
         for(nIndex = 0; nIndex < m; nIndex ++) {
+            int t = 0;
             for(j = 0; j < n ; j ++) {
-                matrix_result[mIndex][nIndex] += matrix_a[mIndex][j] * matrix_b[j][nIndex];
+                t += matrix_a[mIndex][j] * matrix_b[j][nIndex];
             }
-
+                matrix_result[mIndex][nIndex] = t;
         }
     }
     for(mIndex = 0; mIndex < m; mIndex ++) {
