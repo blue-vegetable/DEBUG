@@ -4,13 +4,13 @@
 
 int main()
 {
-    float r, c, s;
-    scanf("%f\n", &r);
+    double r, c, s;
+    scanf("%lf", &r);
 
     c = 2 * PI * r;
     s = PI * r * r;
-    printf("%.3f\n", c);
-    printf("%.3f\n", s);
+    printf("%.3lf\n", c);
+    printf("%.3lf\n", s);
 
     return 0;
 }
